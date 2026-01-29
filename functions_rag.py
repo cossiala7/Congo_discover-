@@ -7,8 +7,6 @@ from langchain_google_genai.chat_models import ChatGoogleGenerativeAI
 
 
 
-# Convertir les chunks en vecteurs
-API_KEY = "AIzaSyAq3fpMSmiGZf4rWtBwhmgADz7SnzO9QW8"
 
 
 # Au démarrage de l'application
@@ -75,3 +73,4 @@ def chat(query):
     response = chat_model.invoke(messages)
     
     return response.content
+
