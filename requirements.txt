@@ -10,3 +10,4 @@ pypdf
 pymupdf
 fastapi
 streamlit
+langchain-groq
