@@ -19,6 +19,7 @@ VECTOR_DB_PATH = "faiss_index_congo"
 # Gemini pour les vecteurs (Embeddings)
 embedding_model = GoogleGenerativeAIEmbeddings(
     model="models/text-embedding-004", 
+    version="v1",
     google_api_key=GOOGLE_API_KEY
 )
 
@@ -141,6 +142,7 @@ Tu es un analyste expert du Congo-Brazzaville. Réponds uniquement en utilisant 
 
     response = chat_model.invoke(messages)
     return response.content
+
 
 
 
