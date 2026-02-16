@@ -6,7 +6,10 @@ from langchain_community.vectorstores import FAISS
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_groq import ChatGroq
 from langchain_core.messages import SystemMessage, HumanMessage
-
+import shutil
+# Ajoutez ceci juste pour un seul lancement, puis supprimez-le
+if os.path.exists("faiss_index_congo"):
+    shutil.rmtree("faiss_index_congo")
 # --- CONFIGURATION DES CLÉS (Streamlit Cloud) ---
 GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
@@ -142,6 +145,7 @@ Tu es un analyste expert du Congo-Brazzaville. Réponds uniquement en utilisant 
 
     response = chat_model.invoke(messages)
     return response.content
+
 
 
 
